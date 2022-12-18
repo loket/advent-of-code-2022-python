@@ -20,6 +20,12 @@ def is_fully_contained(a: list[int], b: list[int]) -> bool:
     return a_in_b or b_in_a
 
 
+def is_partially_contained(a: list[int], b: list[int]) -> bool:
+    a_in_b = any(n in b for n in a)
+    b_in_a = any(n in a for n in b)
+    return a_in_b or b_in_a
+
+
 class Day04:
     @staticmethod
     def part_one(text: str) -> typing.Optional[int]:
@@ -28,7 +34,8 @@ class Day04:
 
     @staticmethod
     def part_two(text: str) -> typing.Optional[int]:
-        return None
+        pairs = [assignment_pair(line) for line in text.splitlines()]
+        return sum(is_partially_contained(a, b) for a, b in pairs)
 
 
 if __name__ == '__main__':

@@ -16,4 +16,4 @@ class TestDay04(TestCase):
 
     def test_part_two(self):
         result = Day04.part_two(self.input)
-        self.assertEqual(result, None)
+        self.assertEqual(result, 4)
