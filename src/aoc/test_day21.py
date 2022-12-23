@@ -25,4 +25,4 @@ hmdt: 32"""
 
     def test_part_two(self):
         result = Day21.part_two(self.input)
-        self.assertEqual(result, None)
+        self.assertEqual(result, 301)
